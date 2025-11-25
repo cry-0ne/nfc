@@ -1,65 +1,55 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>cry-One</title>
-<style>
-  /* Fond noir et vidéo en full screen */
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
-    background-color: #000;
-    font-family: Arial, sans-serif;
-  }
-
-  video#bgVideo {
-    position: fixed;
-    top: 0; left: 0;
-    min-width: 100%; min-height: 100%;
-    object-fit: cover;
-    z-index: -1;
-  }
-
-  /* Centre le bouton */
-  .content {
-    position: absolute;
-    top: 70%; left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-  }
-
-  .btn {
-    padding: 15px 30px;
-    font-size: 20px;
-    background-color: #C0C0C0;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
-  }
-
-  .btn:hover {
-    background-color: #A4A4A4;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cry0ne | Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="overflow-hidden">
+    <video-background></video-background>
 
-<video id="bgVideo" autoplay muted loop>
-  <source src="https://drive.google.com/uc?export=download&id=1auQu_vYyUmq-zaszdBqWcLk7_FfgnVxU" type="video/mp4">
-  Votre navigateur ne supporte pas la vidéo.
-</video>
+    <main class="relative z-10 flex flex-col items-center justify-center min-h-screen p-4 text-center">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div class="relative z-20 max-w-xl mx-auto mt-40">
+<div id="listenButton" class="mt-16">
+<button class="bg-white text-black px-8 py-4 md:px-12 md:py-5 rounded-full font-bold text-lg md:text-xl hover:bg-opacity-90 transform hover:scale-105 transition-all duration-300 flex items-center">
+<i class="fas fa-play mr-3"></i> ÉCOUTER MAINTENANT
+                </button>
+            </div>
 
-<div class="content">
-  <h1>DS LES EYES</h1>
-  <a href="https://drive.google.com/file/d/1zHyFJCMECezUh2pwwN4AqdI3-XbRiguK/view?usp=sharing" class="btn">Écouter maintenant</a>
+            <div id="platforms" class="hidden mt-10 space-y-4 animate-fade-in">
+                <a href="https://open.spotify.com/artist/YOUR_SPOTIFY_ID" target="_blank" 
+                   class="block bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-medium transition-colors duration-300">
+                    <i class="fab fa-spotify mr-2"></i> Spotify
+                </a>
+                <a href="https://music.youtube.com/channel/YOUR_YOUTUBE_ID" target="_blank" 
+                   class="block bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-medium transition-colors duration-300">
+                    <i class="fab fa-youtube mr-2"></i> YouTube Music
+                </a>
+                <a href="https://www.deezer.com/fr/artist/YOUR_DEEZER_ID" target="_blank" 
+                   class="block bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-medium transition-colors duration-300">
+                    <i class="fas fa-music mr-2"></i> Deezer
+                </a>
+                <a href="https://music.apple.com/fr/artist/YOUR_APPLE_ID" target="_blank" 
+                   class="block bg-pink-600 hover:bg-pink-700 text-white px-8 py-4 rounded-full font-medium transition-colors duration-300">
+                    <i class="fab fa-apple mr-2"></i> Apple Music
+                </a>
+            </div>
+            <div class="flex justify-center w-full mt-8">
+<img src="https://huggingface.co/spaces/cryyy0ne28/soundwave-symphony/resolve/main/images/cry0ne%20-%20black%20dots.png" alt="cry0ne" class="h-14 md:h-16 drop-shadow-lg">
 </div>
-
+</div>
+    </main>
+<audio-toggle></audio-toggle>
+<footer class="fixed bottom-0 w-full py-4 bg-black text-white text-center z-20">
+<p class="text-sm">© 2025 CRYONE. Tous droits réservés.</p>
+    </footer>
+    <script src="components/video-background.js"></script>
+    <script src="components/audio-toggle.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
